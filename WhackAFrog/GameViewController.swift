@@ -8,28 +8,46 @@
 
 import UIKit
 
-class GameViewController: UIViewController {
+class GameViewController: UIViewController, UICollectionViewDelegate , UICollectionViewDataSource{
+    
+    @IBOutlet weak var boardCollectionView: UICollectionView!
 
+    let numberOfRows = 8
+    let numberOfCols = 5
+    let tileMargin = CGFloat(3.0)
+    
+    var isGameEnabled = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    //number of items in section
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        return numberOfCols
     }
-    */
-
+   
+    //init tiles
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let tile = collectionView.dequeueReusableCell(withReuseIdentifier: "Tile", for: indexPath) as! Tile
+    
+        if let image = UIImage(named: "frogIcon"){
+        tile.myButton.setImage(image, for: .normal)
+        }
+        
+        return tile
+    }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return numberOfRows
+    }
+    
+    
 }
