@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WhackAFrog" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +21,171 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="frogBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Kp6-2N-hla">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mga-Lr-163">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <state key="normal" backgroundImage="frogIcon"/>
+                                <connections>
+                                    <action selector="startTheGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RkI-nv-HiU"/>
+                                    <segue destination="n2x-rq-cqu" kind="show" identifier="gameSegue" id="pCG-Fe-Zr4"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WHACK A FROG" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Nx-Ue-N2g">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="57"/>
+                                <color key="textColor" red="0.0" green="0.49105408031088082" blue="0.022093023301809497" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="highlightedColor" red="0.0" green="1" blue="0.04499101868336508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="shadowOffset" width="5" height="0.0"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qtN-RG-uhu">
+                                <rect key="frame" x="0.0" y="605" width="375" height="62"/>
+                                <color key="backgroundColor" red="0.96843977222320132" green="1" blue="0.96709468486005035" alpha="0.6667033450704225" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="titleShadowOffset" width="3" height="1"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Instructions">
+                                            <attributes>
+                                                <color key="NSColor" red="0.0036500944268712146" green="0.59887062823834203" blue="0.033647895439145675" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" size="43" name="ArialRoundedMTBold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <connections>
+                                    <action selector="openInstruction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dkg-3q-csu"/>
+                                    <segue destination="fcz-oa-NTc" kind="show" identifier="instructionsSegue" id="8OX-XM-GQY"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="qtN-RG-uhu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6wj-7a-yXw"/>
+                            <constraint firstItem="6Nx-Ue-N2g" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="BFt-wG-YCK"/>
+                            <constraint firstItem="6Nx-Ue-N2g" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FMU-8E-3B0"/>
+                            <constraint firstItem="Mga-Lr-163" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Fo1-Dd-T7Y"/>
+                            <constraint firstItem="Kp6-2N-hla" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="H45-SZ-432"/>
+                            <constraint firstAttribute="bottom" secondItem="qtN-RG-uhu" secondAttribute="bottom" id="Iuj-N7-uzt"/>
+                            <constraint firstItem="qtN-RG-uhu" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="ONG-Gu-ESk"/>
+                            <constraint firstItem="6Nx-Ue-N2g" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="VCe-2V-NyP"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="qtN-RG-uhu" secondAttribute="bottom" id="YAh-LL-srE"/>
+                            <constraint firstItem="Mga-Lr-163" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="bwE-ef-oqm"/>
+                            <constraint firstItem="Mga-Lr-163" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="g3X-hU-HUn"/>
+                            <constraint firstItem="Kp6-2N-hla" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gUV-4s-ir7"/>
+                            <constraint firstItem="Kp6-2N-hla" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="hDH-y6-E7a"/>
+                            <constraint firstItem="Kp6-2N-hla" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="lXA-vK-Fb9"/>
+                            <constraint firstItem="6Nx-Ue-N2g" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="nCr-4C-PYu"/>
+                            <constraint firstItem="6Nx-Ue-N2g" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="nYm-ST-GvX"/>
+                            <constraint firstItem="qtN-RG-uhu" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="xH4-dc-8aV"/>
+                            <constraint firstAttribute="bottom" secondItem="qtN-RG-uhu" secondAttribute="bottom" id="yqT-QN-edh"/>
+                            <constraint firstItem="Mga-Lr-163" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="z9y-0k-Mqa"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="24.375" y="36.971830985915496"/>
+        </scene>
+        <!--Game View Controller-->
+        <scene sceneID="bw7-PF-DeX">
+            <objects>
+                <viewController id="n2x-rq-cqu" customClass="GameViewController" customModule="WhackAFrog" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="seZ-sh-Sgd"/>
+                        <viewControllerLayoutGuide type="bottom" id="efm-bB-aJR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XZK-Sd-jgg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="frogBackground" translatesAutoresizingMaskIntoConstraints="NO" id="hjE-fg-Rb2">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="weQ-5x-eDM">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="pp3-j0-6Hz">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S76-1X-btz">
+                                                <rect key="frame" x="0.0" y="77.5" width="91.5" height="512"/>
+                                                <state key="normal" title="Button" image="backArrow"/>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wOe-Y6-Vx8">
+                                                <rect key="frame" x="141.5" y="323.5" width="92" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aOD-BT-DQp">
+                                                <rect key="frame" x="283.5" y="323.5" width="91.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="pp3-j0-6Hz" firstAttribute="width" secondItem="weQ-5x-eDM" secondAttribute="width" id="hiu-aY-D5U"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="weQ-5x-eDM" firstAttribute="centerY" secondItem="XZK-Sd-jgg" secondAttribute="centerY" id="AEx-5a-Xh8"/>
+                            <constraint firstItem="hjE-fg-Rb2" firstAttribute="centerY" secondItem="XZK-Sd-jgg" secondAttribute="centerY" id="Bwo-h7-XAo"/>
+                            <constraint firstItem="hjE-fg-Rb2" firstAttribute="width" secondItem="XZK-Sd-jgg" secondAttribute="width" id="P2X-X3-9cN"/>
+                            <constraint firstItem="weQ-5x-eDM" firstAttribute="width" secondItem="XZK-Sd-jgg" secondAttribute="width" id="SHf-DZ-LYn"/>
+                            <constraint firstItem="weQ-5x-eDM" firstAttribute="centerX" secondItem="XZK-Sd-jgg" secondAttribute="centerX" id="Y1e-8j-5fh"/>
+                            <constraint firstItem="hjE-fg-Rb2" firstAttribute="height" secondItem="XZK-Sd-jgg" secondAttribute="height" id="nG5-Yf-h1Z"/>
+                            <constraint firstItem="hjE-fg-Rb2" firstAttribute="centerX" secondItem="XZK-Sd-jgg" secondAttribute="centerX" id="pZr-4f-oZY"/>
+                            <constraint firstItem="weQ-5x-eDM" firstAttribute="height" secondItem="XZK-Sd-jgg" secondAttribute="height" id="ze0-fq-uOw"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Th-Rn-Te2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="990" y="37"/>
+        </scene>
+        <!--Instructions View Controller-->
+        <scene sceneID="JI0-W0-feB">
+            <objects>
+                <viewController id="fcz-oa-NTc" customClass="InstructionsViewController" customModule="WhackAFrog" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="W72-p8-0he"/>
+                        <viewControllerLayoutGuide type="bottom" id="yh9-yy-AXq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2YM-pI-bkR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="frogBackground" translatesAutoresizingMaskIntoConstraints="NO" id="TZU-Aq-DtW">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="TZU-Aq-DtW" firstAttribute="leading" secondItem="2YM-pI-bkR" secondAttribute="leadingMargin" constant="-16" id="Qpe-Qw-JMj"/>
+                            <constraint firstItem="TZU-Aq-DtW" firstAttribute="width" secondItem="2YM-pI-bkR" secondAttribute="width" id="UTR-Ae-I7Q"/>
+                            <constraint firstItem="TZU-Aq-DtW" firstAttribute="height" secondItem="2YM-pI-bkR" secondAttribute="height" id="bAx-rq-vgn"/>
+                            <constraint firstItem="TZU-Aq-DtW" firstAttribute="centerY" secondItem="2YM-pI-bkR" secondAttribute="centerY" id="f4S-4M-sth"/>
+                            <constraint firstItem="TZU-Aq-DtW" firstAttribute="centerX" secondItem="2YM-pI-bkR" secondAttribute="centerX" id="xtE-G1-Hah"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ffC-A0-BaV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="24" y="849"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="backArrow" width="512" height="512"/>
+        <image name="frogBackground" width="850" height="425"/>
+        <image name="frogIcon" width="600" height="588"/>
+    </resources>
 </document>
