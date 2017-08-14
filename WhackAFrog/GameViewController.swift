@@ -12,14 +12,23 @@ class GameViewController: UIViewController, UICollectionViewDelegate , UICollect
     
     @IBOutlet weak var boardCollectionView: UICollectionView!
 
-    let numberOfRows = 8
+    let numberOfRows = 5
     let numberOfCols = 4
-    let tileMargin = CGFloat(3.0)
-    
+    var gridLayout: GridLayout!
     var isGameEnabled = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        gridLayout = GridLayout(numberOfCols : numberOfCols,numberOfRows : numberOfRows)
+        boardCollectionView.collectionViewLayout = gridLayout
+        boardCollectionView.reloadData()
+        
+        //let screenSize = UIScreen.main.bounds
+        //let screenWidth = screenSize.width
+        //let screenHeight = screenSize.height
+        
+        
         
     }
     
@@ -49,5 +58,11 @@ class GameViewController: UIViewController, UICollectionViewDelegate , UICollect
         return numberOfRows
     }
     
+    //for the roation
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        
+        super.viewWillTransition(to: size, with: coordinator)
+        gridLayout.invalidateLayout()
+    }
     
 }

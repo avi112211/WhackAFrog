@@ -153,8 +153,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MPk-jY-1QC">
-                                                    <rect key="frame" x="0.0" y="0.5" width="50" height="50"/>
+                                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MPk-jY-1QC">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                     <state key="normal" backgroundImage="green-leaf-md"/>
                                                 </button>
                                             </subviews>
@@ -180,18 +180,18 @@
                         <constraints>
                             <constraint firstItem="9CE-Vf-Gih" firstAttribute="top" secondItem="XZK-Sd-jgg" secondAttribute="topMargin" id="508-P2-8lR"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Ovk-7s-q5S" secondAttribute="trailing" id="91H-BZ-dZM"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="kSK-FM-xov" secondAttribute="bottom" constant="30" id="AqR-2T-BHp"/>
                             <constraint firstItem="hjE-fg-Rb2" firstAttribute="centerY" secondItem="XZK-Sd-jgg" secondAttribute="centerY" id="Bwo-h7-XAo"/>
                             <constraint firstItem="9CE-Vf-Gih" firstAttribute="centerX" secondItem="XZK-Sd-jgg" secondAttribute="centerX" id="DVR-0y-gpe"/>
                             <constraint firstItem="hjE-fg-Rb2" firstAttribute="width" secondItem="XZK-Sd-jgg" secondAttribute="width" id="P2X-X3-9cN"/>
-                            <constraint firstItem="kSK-FM-xov" firstAttribute="top" secondItem="seZ-sh-Sgd" secondAttribute="bottom" constant="80" id="QNv-Fc-xfx"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="kSK-FM-xov" secondAttribute="trailing" id="T9y-sS-6KU"/>
-                            <constraint firstItem="efm-bB-aJR" firstAttribute="top" secondItem="kSK-FM-xov" secondAttribute="bottom" constant="30" id="fEA-nu-h8H"/>
+                            <constraint firstItem="kSK-FM-xov" firstAttribute="trailing" secondItem="XZK-Sd-jgg" secondAttribute="trailingMargin" id="TVd-lQ-VH0"/>
+                            <constraint firstItem="kSK-FM-xov" firstAttribute="leading" secondItem="XZK-Sd-jgg" secondAttribute="leadingMargin" id="YOr-6C-el9"/>
                             <constraint firstItem="Ovk-7s-q5S" firstAttribute="top" secondItem="XZK-Sd-jgg" secondAttribute="topMargin" id="nAQ-Wn-ZN5"/>
                             <constraint firstItem="hjE-fg-Rb2" firstAttribute="height" secondItem="XZK-Sd-jgg" secondAttribute="height" id="nG5-Yf-h1Z"/>
                             <constraint firstItem="hjE-fg-Rb2" firstAttribute="centerX" secondItem="XZK-Sd-jgg" secondAttribute="centerX" id="pZr-4f-oZY"/>
                             <constraint firstItem="zSK-Sb-cgs" firstAttribute="leading" secondItem="XZK-Sd-jgg" secondAttribute="leadingMargin" id="q5B-RI-ci4"/>
+                            <constraint firstItem="kSK-FM-xov" firstAttribute="top" secondItem="zSK-Sb-cgs" secondAttribute="bottom" constant="16" id="r7i-Hz-lKX"/>
                             <constraint firstItem="zSK-Sb-cgs" firstAttribute="top" secondItem="XZK-Sd-jgg" secondAttribute="topMargin" id="u5r-EO-9Tw"/>
-                            <constraint firstItem="kSK-FM-xov" firstAttribute="leading" secondItem="XZK-Sd-jgg" secondAttribute="leadingMargin" id="xjD-ms-lcv"/>
                         </constraints>
                     </view>
                     <connections>
