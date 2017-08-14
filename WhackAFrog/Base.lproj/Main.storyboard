@@ -217,13 +217,24 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="frogBackground" translatesAutoresizingMaskIntoConstraints="NO" id="TZU-Aq-DtW">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="xMV-Tn-N1C">
+                                <rect key="frame" x="16" y="0.0" width="343" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="0.66291202910958902" colorSpace="calibratedWhite"/>
+                                <string key="text">Your goal is to whack a frog fast when he lights up. You whack only the frogs. To whack a frog, hit his head with your finger. Do it fast, before time runs out. If you whack the frog in time, you'll get 10 points. If you whack something else or you whack the frog after time runs out, you'll lose 2 points.</string>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="33"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="xMV-Tn-N1C" secondAttribute="trailing" id="27P-9p-las"/>
                             <constraint firstItem="TZU-Aq-DtW" firstAttribute="leading" secondItem="2YM-pI-bkR" secondAttribute="leadingMargin" constant="-16" id="Qpe-Qw-JMj"/>
                             <constraint firstItem="TZU-Aq-DtW" firstAttribute="width" secondItem="2YM-pI-bkR" secondAttribute="width" id="UTR-Ae-I7Q"/>
+                            <constraint firstItem="xMV-Tn-N1C" firstAttribute="leading" secondItem="2YM-pI-bkR" secondAttribute="leadingMargin" id="aHZ-1W-cLS"/>
                             <constraint firstItem="TZU-Aq-DtW" firstAttribute="height" secondItem="2YM-pI-bkR" secondAttribute="height" id="bAx-rq-vgn"/>
                             <constraint firstItem="TZU-Aq-DtW" firstAttribute="centerY" secondItem="2YM-pI-bkR" secondAttribute="centerY" id="f4S-4M-sth"/>
+                            <constraint firstItem="xMV-Tn-N1C" firstAttribute="top" secondItem="2YM-pI-bkR" secondAttribute="topMargin" id="nJm-5p-xY8"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="xMV-Tn-N1C" secondAttribute="bottom" id="u1H-6h-GA9"/>
                             <constraint firstItem="TZU-Aq-DtW" firstAttribute="centerX" secondItem="2YM-pI-bkR" secondAttribute="centerX" id="xtE-G1-Hah"/>
                         </constraints>
                     </view>

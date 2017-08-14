@@ -12,8 +12,8 @@ class GameViewController: UIViewController, UICollectionViewDelegate , UICollect
     
     @IBOutlet weak var boardCollectionView: UICollectionView!
 
-    let numberOfRows = 5
-    let numberOfCols = 4
+    let numberOfRows = 10
+    let numberOfCols = 10
     var gridLayout: GridLayout!
     var isGameEnabled = true
     
@@ -23,12 +23,6 @@ class GameViewController: UIViewController, UICollectionViewDelegate , UICollect
         gridLayout = GridLayout(numberOfCols : numberOfCols,numberOfRows : numberOfRows)
         boardCollectionView.collectionViewLayout = gridLayout
         boardCollectionView.reloadData()
-        
-        //let screenSize = UIScreen.main.bounds
-        //let screenWidth = screenSize.width
-        //let screenHeight = screenSize.height
-        
-        
         
     }
     
@@ -47,10 +41,6 @@ class GameViewController: UIViewController, UICollectionViewDelegate , UICollect
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let tile = collectionView.dequeueReusableCell(withReuseIdentifier: "Tile", for: indexPath) as! Tile
     
-        //if let image = UIImage(named: "frogIcon"){
-       // tile.myButton.setImage(image, for: .normal)
-        //}
-        
         return tile
     }
     
