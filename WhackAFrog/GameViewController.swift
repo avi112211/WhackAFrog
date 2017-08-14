@@ -13,7 +13,7 @@ class GameViewController: UIViewController, UICollectionViewDelegate , UICollect
     @IBOutlet weak var boardCollectionView: UICollectionView!
 
     let numberOfRows = 8
-    let numberOfCols = 5
+    let numberOfCols = 4
     let tileMargin = CGFloat(3.0)
     
     var isGameEnabled = true
@@ -38,9 +38,9 @@ class GameViewController: UIViewController, UICollectionViewDelegate , UICollect
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let tile = collectionView.dequeueReusableCell(withReuseIdentifier: "Tile", for: indexPath) as! Tile
     
-        if let image = UIImage(named: "frogIcon"){
-        tile.myButton.setImage(image, for: .normal)
-        }
+        //if let image = UIImage(named: "frogIcon"){
+       // tile.myButton.setImage(image, for: .normal)
+        //}
         
         return tile
     }
