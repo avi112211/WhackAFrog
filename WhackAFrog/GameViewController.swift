@@ -11,11 +11,19 @@ import UIKit
 class GameViewController: UIViewController, UICollectionViewDelegate , UICollectionViewDataSource{
     
     @IBOutlet weak var boardCollectionView: UICollectionView!
-
-    let numberOfRows = 10
-    let numberOfCols = 10
+    @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet weak var scoreLabel: UILabel!
+    
+    //coutdown timer
+    var timeCounter: Int = 60
+    var timer = Timer()
+    
+    
+    
+    let numberOfRows: Int = 10
+    let numberOfCols: Int = 10
     var gridLayout: GridLayout!
-    var isGameEnabled = true
+    var isGameEnabled: Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +32,22 @@ class GameViewController: UIViewController, UICollectionViewDelegate , UICollect
         boardCollectionView.collectionViewLayout = gridLayout
         boardCollectionView.reloadData()
         
+        //start timer
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(GameViewController.counter), userInfo: nil, repeats: true)
+    }
+    
+    func counter()
+    {
+        timeCounter-=1
+        DispatchQueue.main.async {
+            self.timerLabel.text = String(self.timeCounter)
+        }
+        
+        //timer reach zero
+        if (timeCounter == 0)
+        {
+            timer.invalidate() //stop coutdown timer
+        }
     }
     
     override func didReceiveMemoryWarning() {
