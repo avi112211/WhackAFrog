@@ -29,6 +29,7 @@ class GameViewController: UIViewController, UICollectionViewDelegate , UICollect
     var logic: Logic? = nil
     
     override func viewDidLoad() {
+        //boardCollectionView.allowsSelection = true
         super.viewDidLoad()
         
         //init collection view
@@ -36,14 +37,23 @@ class GameViewController: UIViewController, UICollectionViewDelegate , UICollect
         boardCollectionView.collectionViewLayout = gridLayout
         boardCollectionView.reloadData()
         
+        
         //init logic board
-        self.logic = Logic(numOfRows: numberOfRows, numOfCols: numberOfCols)
-        
-        
-        //start timer
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(GameViewController.counter), userInfo: nil, repeats: true)
+        self.logic = Logic(numOfRows: numberOfRows, numOfCols: numberOfCols, scoreLabel : scoreLabel)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        //start timer
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(GameViewController.counter), userInfo: nil, repeats: true)
+        
+        logic?.startTheGame()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool){
+        timer.invalidate()
+        logic?.frogTimer.invalidate()
+        logic?.enemyTimer.invalidate()
+    }
     
     //applies every second
     func counter()
@@ -56,9 +66,19 @@ class GameViewController: UIViewController, UICollectionViewDelegate , UICollect
         //timer reach zero
         if (timeCounter == 0)
         {
-            self.isGameEnabled = false
+            endGame()
             timer.invalidate() //stop coutdown timer
+            
         }
+    }
+    
+    func endGame(){
+        self.isGameEnabled = false
+        self.logic?.isGameEnabled = false
+        
+//        let thisConrollView = storyboard?.instantiateViewController(withIdentifier: "EndGameViewController") as! EndGameViewController
+//        thisConrollView.stringPassed = "LOSE"
+//        navigationController?.pushViewController(thisConrollView, animated: true)
     }
     
     override func didReceiveMemoryWarning() {
@@ -91,11 +111,19 @@ class GameViewController: UIViewController, UICollectionViewDelegate , UICollect
         return numberOfRows
     }
     
-    //for the roation
+    //for the rotation
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         
         super.viewWillTransition(to: size, with: coordinator)
         gridLayout.invalidateLayout()
     }
+    
+    //cell selected
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        logic?.click(row: indexPath.row, col: indexPath.section)
+    }
+    
+
     
 }

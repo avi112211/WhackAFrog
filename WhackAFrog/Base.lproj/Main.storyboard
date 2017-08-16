@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1t9-cI-0Le">
-    <device id="retina4_0" orientation="portrait">
+    <device id="retina3_5" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -19,21 +19,21 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="frogBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Kp6-2N-hla">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mga-Lr-163">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="64" width="480" height="256"/>
                                 <state key="normal" backgroundImage="frogIcon"/>
                                 <connections>
-                                    <segue destination="n2x-rq-cqu" kind="show" identifier="gameSegue" id="ZBu-Yk-Xa7"/>
+                                    <segue destination="n2x-rq-cqu" kind="show" identifier="GameSegue" id="h37-2s-pof"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WHACK A FROG" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Nx-Ue-N2g">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="64" width="480" height="256"/>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="40"/>
                                 <color key="textColor" red="0.0" green="0.49105408031088082" blue="0.022093023301809497" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="highlightedColor" red="0.0" green="1" blue="0.04499101868336508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -41,7 +41,7 @@
                                 <size key="shadowOffset" width="5" height="0.0"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RSN-HV-ps1">
-                                <rect key="frame" x="0.0" y="514" width="320" height="54"/>
+                                <rect key="frame" x="0.0" y="266" width="480" height="54"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.73148544520547942" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal">
@@ -87,20 +87,20 @@
         <!--Game View Controller-->
         <scene sceneID="bw7-PF-DeX">
             <objects>
-                <viewController id="n2x-rq-cqu" customClass="GameViewController" customModule="WhackAFrog" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GameViewController" id="n2x-rq-cqu" customClass="GameViewController" customModule="WhackAFrog" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="seZ-sh-Sgd"/>
                         <viewControllerLayoutGuide type="bottom" id="efm-bB-aJR"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="XZK-Sd-jgg">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="frogBackground" translatesAutoresizingMaskIntoConstraints="NO" id="hjE-fg-Rb2">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9CE-Vf-Gih">
-                                <rect key="frame" x="124" y="64" width="72" height="70"/>
+                                <rect key="frame" x="204" y="64" width="72" height="70"/>
                                 <attributedString key="attributedText">
                                     <fragment content="60">
                                         <attributes>
@@ -112,7 +112,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ovk-7s-q5S">
-                                <rect key="frame" x="268" y="64" width="36" height="70"/>
+                                <rect key="frame" x="424" y="64" width="36" height="70"/>
                                 <attributedString key="attributedText">
                                     <fragment content="0">
                                         <attributes>
@@ -124,7 +124,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="kSK-FM-xov">
-                                <rect key="frame" x="16" y="134" width="288" height="404"/>
+                                <rect key="frame" x="20" y="134" width="440" height="156"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ycA-vq-4zh">
                                     <size key="itemSize" width="50" height="50"/>
@@ -140,20 +140,27 @@
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MPk-jY-1QC">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hole" translatesAutoresizingMaskIntoConstraints="NO" id="AUB-eV-seL">
                                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                    <state key="normal" backgroundImage="green-leaf-md"/>
-                                                </button>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lzk-O1-1co">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <color key="tintColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                                                </imageView>
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="MPk-jY-1QC" firstAttribute="height" secondItem="PwB-T3-Hbj" secondAttribute="height" id="2rz-rb-C7P"/>
-                                            <constraint firstItem="MPk-jY-1QC" firstAttribute="centerY" secondItem="PwB-T3-Hbj" secondAttribute="centerY" id="3fq-Xe-GHc"/>
-                                            <constraint firstItem="MPk-jY-1QC" firstAttribute="width" secondItem="PwB-T3-Hbj" secondAttribute="width" id="Alh-l7-lkM"/>
-                                            <constraint firstItem="MPk-jY-1QC" firstAttribute="centerX" secondItem="PwB-T3-Hbj" secondAttribute="centerX" id="txO-gY-Nlk"/>
+                                            <constraint firstItem="AUB-eV-seL" firstAttribute="height" secondItem="PwB-T3-Hbj" secondAttribute="height" id="Nu7-03-gdk"/>
+                                            <constraint firstItem="Lzk-O1-1co" firstAttribute="height" secondItem="PwB-T3-Hbj" secondAttribute="height" id="Shf-WN-wFf"/>
+                                            <constraint firstItem="Lzk-O1-1co" firstAttribute="centerX" secondItem="PwB-T3-Hbj" secondAttribute="centerX" id="Uws-fk-kwc"/>
+                                            <constraint firstItem="AUB-eV-seL" firstAttribute="centerY" secondItem="PwB-T3-Hbj" secondAttribute="centerY" id="lpG-aU-FYx"/>
+                                            <constraint firstItem="Lzk-O1-1co" firstAttribute="centerY" secondItem="PwB-T3-Hbj" secondAttribute="centerY" id="lq0-cH-68C"/>
+                                            <constraint firstItem="AUB-eV-seL" firstAttribute="centerX" secondItem="PwB-T3-Hbj" secondAttribute="centerX" id="psy-v9-lSW"/>
+                                            <constraint firstItem="AUB-eV-seL" firstAttribute="width" secondItem="PwB-T3-Hbj" secondAttribute="width" id="qCa-Pg-uCy"/>
+                                            <constraint firstItem="Lzk-O1-1co" firstAttribute="width" secondItem="PwB-T3-Hbj" secondAttribute="width" id="sDI-Rz-vNX"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="myButton" destination="MPk-jY-1QC" id="eTG-Ww-q2g"/>
+                                            <outlet property="hole" destination="Lzk-O1-1co" id="1sE-XP-hh5"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -192,20 +199,20 @@
         <!--End Game View Controller-->
         <scene sceneID="ztU-8L-jkX">
             <objects>
-                <viewController id="6yw-RL-tvH" customClass="EndGameViewController" customModule="WhackAFrog" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EndGameViewController" id="6yw-RL-tvH" customClass="EndGameViewController" customModule="WhackAFrog" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rU1-kN-kyL"/>
                         <viewControllerLayoutGuide type="bottom" id="2VJ-7p-kpj"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="EN9-AK-l7L">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="frogBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Vvh-nv-ndy">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hrd-DM-AeT">
-                                <rect key="frame" x="0.0" y="70" width="320" height="73"/>
+                                <rect key="frame" x="0.0" y="70" width="480" height="73"/>
                                 <color key="tintColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <attributedString key="attributedText">
                                     <fragment content="YOU WIN!">
@@ -221,7 +228,7 @@
                                 <size key="shadowOffset" width="4" height="3"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vVo-32-y7g">
-                                <rect key="frame" x="0.0" y="480" width="320" height="58"/>
+                                <rect key="frame" x="0.0" y="232" width="480" height="58"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.779296875" colorSpace="calibratedRGB"/>
                                 <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
                                 <color key="tintColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -240,7 +247,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cgw-bH-a2s">
-                                <rect key="frame" x="0.0" y="412" width="320" height="58"/>
+                                <rect key="frame" x="0.0" y="164" width="480" height="58"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.779296875" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal">
@@ -292,14 +299,14 @@
                         <viewControllerLayoutGuide type="bottom" id="yh9-yy-AXq"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="2YM-pI-bkR">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="frogBackground" translatesAutoresizingMaskIntoConstraints="NO" id="TZU-Aq-DtW">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="xMV-Tn-N1C">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="64" width="480" height="256"/>
                                 <color key="backgroundColor" white="1" alpha="0.66291202910958902" colorSpace="calibratedWhite"/>
                                 <string key="text">Your goal is to whack a frog fast when he lights up. You whack only the frogs. To whack a frog, hit his head with your finger. Do it fast, before time runs out. If you whack the frog in time, you'll get 10 points. If you whack something else or you whack the frog after time runs out, you'll lose 2 points.</string>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="27"/>
@@ -346,6 +353,6 @@
     <resources>
         <image name="frogBackground" width="850" height="425"/>
         <image name="frogIcon" width="600" height="588"/>
-        <image name="green-leaf-md" width="299" height="207"/>
+        <image name="hole" width="300" height="276"/>
     </resources>
 </document>
