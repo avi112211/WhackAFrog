@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		84521A421F4443F40048ED89 /* EndGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84521A411F4443F30048ED89 /* EndGameViewController.swift */; };
+		84521A441F4456CC0048ED89 /* Logic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84521A431F4456CC0048ED89 /* Logic.swift */; };
 		84592BBD1F40518E00D053AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84592BBC1F40518E00D053AA /* AppDelegate.swift */; };
 		84592BBF1F40518E00D053AA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84592BBE1F40518E00D053AA /* ViewController.swift */; };
 		84592BC21F40518E00D053AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84592BC01F40518E00D053AA /* Main.storyboard */; };
@@ -40,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		84521A411F4443F30048ED89 /* EndGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndGameViewController.swift; sourceTree = "<group>"; };
+		84521A431F4456CC0048ED89 /* Logic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logic.swift; sourceTree = "<group>"; };
 		84592BB91F40518E00D053AA /* WhackAFrog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhackAFrog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84592BBC1F40518E00D053AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84592BBE1F40518E00D053AA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				84592BBC1F40518E00D053AA /* AppDelegate.swift */,
 				84592BBE1F40518E00D053AA /* ViewController.swift */,
 				84592BC01F40518E00D053AA /* Main.storyboard */,
+				84521A431F4456CC0048ED89 /* Logic.swift */,
 				84521A411F4443F30048ED89 /* EndGameViewController.swift */,
 				84592BEE1F40BDEA00D053AA /* Tile.swift */,
 				84592BEC1F4092C100D053AA /* InstructionsViewController.swift */,
@@ -278,6 +281,7 @@
 				84592BEB1F4090A100D053AA /* GameViewController.swift in Sources */,
 				84592BEF1F40BDEA00D053AA /* Tile.swift in Sources */,
 				84BA9A9D1F41E5A200FAD309 /* GridLayout.swift in Sources */,
+				84521A441F4456CC0048ED89 /* Logic.swift in Sources */,
 				84592BED1F4092C100D053AA /* InstructionsViewController.swift in Sources */,
 				84521A421F4443F40048ED89 /* EndGameViewController.swift in Sources */,
 				84592BBD1F40518E00D053AA /* AppDelegate.swift in Sources */,

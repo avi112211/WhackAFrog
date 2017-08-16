@@ -10,6 +10,7 @@ import UIKit
 
 class GameViewController: UIViewController, UICollectionViewDelegate , UICollectionViewDataSource{
     
+    //components
     @IBOutlet weak var boardCollectionView: UICollectionView!
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
@@ -18,24 +19,33 @@ class GameViewController: UIViewController, UICollectionViewDelegate , UICollect
     var timeCounter: Int = 60
     var timer = Timer()
     
-    
-    
-    let numberOfRows: Int = 10
-    let numberOfCols: Int = 10
+    //board
+    let numberOfRows: Int = 5
+    let numberOfCols: Int = 4
     var gridLayout: GridLayout!
+    
+    //game controll
     var isGameEnabled: Bool = true
+    var logic: Logic? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //init collection view
         gridLayout = GridLayout(numberOfCols : numberOfCols,numberOfRows : numberOfRows)
         boardCollectionView.collectionViewLayout = gridLayout
         boardCollectionView.reloadData()
+        
+        //init logic board
+        self.logic = Logic(numOfRows: numberOfRows, numOfCols: numberOfCols)
+        
         
         //start timer
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(GameViewController.counter), userInfo: nil, repeats: true)
     }
     
+    
+    //applies every second
     func counter()
     {
         timeCounter-=1
@@ -46,6 +56,7 @@ class GameViewController: UIViewController, UICollectionViewDelegate , UICollect
         //timer reach zero
         if (timeCounter == 0)
         {
+            self.isGameEnabled = false
             timer.invalidate() //stop coutdown timer
         }
     }
@@ -54,6 +65,11 @@ class GameViewController: UIViewController, UICollectionViewDelegate , UICollect
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    
+    
+    //  collection view init functions
     
     //number of items in section
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -64,7 +80,10 @@ class GameViewController: UIViewController, UICollectionViewDelegate , UICollect
     //init tiles
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let tile = collectionView.dequeueReusableCell(withReuseIdentifier: "Tile", for: indexPath) as! Tile
-    
+        
+        //logic - UI match
+        logic?.addTile(row: indexPath.row, col : indexPath.section, tile: tile)
+        
         return tile
     }
     

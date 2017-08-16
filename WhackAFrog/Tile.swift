@@ -11,7 +11,8 @@ import UIKit
 class Tile: UICollectionViewCell {
     
     @IBOutlet weak var myButton: UIButton!
-
+    
+    var value : Int = 0
 
 
 }
