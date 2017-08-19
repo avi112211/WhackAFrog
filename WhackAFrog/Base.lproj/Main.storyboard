@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1t9-cI-0Le">
-    <device id="retina3_5" orientation="landscape">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1t9-cI-0Le">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,21 +19,21 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="frogBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Kp6-2N-hla">
-                                <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mga-Lr-163">
-                                <rect key="frame" x="0.0" y="64" width="480" height="256"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <state key="normal" backgroundImage="frogIcon"/>
                                 <connections>
                                     <segue destination="n2x-rq-cqu" kind="show" identifier="GameSegue" id="h37-2s-pof"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WHACK A FROG" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Nx-Ue-N2g">
-                                <rect key="frame" x="0.0" y="64" width="480" height="256"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="40"/>
                                 <color key="textColor" red="0.0" green="0.49105408031088082" blue="0.022093023301809497" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="highlightedColor" red="0.0" green="1" blue="0.04499101868336508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -41,7 +41,7 @@
                                 <size key="shadowOffset" width="5" height="0.0"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RSN-HV-ps1">
-                                <rect key="frame" x="0.0" y="266" width="480" height="54"/>
+                                <rect key="frame" x="0.0" y="514" width="320" height="54"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.73148544520547942" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal">
@@ -93,14 +93,14 @@
                         <viewControllerLayoutGuide type="bottom" id="efm-bB-aJR"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="XZK-Sd-jgg">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="frogBackground" translatesAutoresizingMaskIntoConstraints="NO" id="hjE-fg-Rb2">
-                                <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9CE-Vf-Gih">
-                                <rect key="frame" x="204" y="64" width="72" height="70"/>
+                                <rect key="frame" x="124" y="20" width="72" height="70"/>
                                 <attributedString key="attributedText">
                                     <fragment content="60">
                                         <attributes>
@@ -112,7 +112,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ovk-7s-q5S">
-                                <rect key="frame" x="424" y="64" width="36" height="70"/>
+                                <rect key="frame" x="268" y="20" width="36" height="70"/>
                                 <attributedString key="attributedText">
                                     <fragment content="0">
                                         <attributes>
@@ -124,7 +124,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="kSK-FM-xov">
-                                <rect key="frame" x="20" y="134" width="440" height="156"/>
+                                <rect key="frame" x="16" y="90" width="288" height="448"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ycA-vq-4zh">
                                     <size key="itemSize" width="50" height="50"/>
@@ -190,6 +190,7 @@
                         <outlet property="boardCollectionView" destination="kSK-FM-xov" id="c2S-ii-fSX"/>
                         <outlet property="scoreLabel" destination="Ovk-7s-q5S" id="6HX-55-uKW"/>
                         <outlet property="timerLabel" destination="9CE-Vf-Gih" id="fF0-dI-1tt"/>
+                        <segue destination="6yw-RL-tvH" kind="show" identifier="endGame" id="JTV-Za-Ufh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Th-Rn-Te2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -205,20 +206,21 @@
                         <viewControllerLayoutGuide type="bottom" id="2VJ-7p-kpj"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="EN9-AK-l7L">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="frogBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Vvh-nv-ndy">
-                                <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="frogBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Vvh-nv-ndy">
+                                <rect key="frame" x="-265" y="0.0" width="850" height="466"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hrd-DM-AeT">
-                                <rect key="frame" x="0.0" y="70" width="480" height="73"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hrd-DM-AeT">
+                                <rect key="frame" x="0.0" y="50" width="320" height="61"/>
                                 <color key="tintColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <attributedString key="attributedText">
                                     <fragment content="YOU WIN!">
                                         <attributes>
                                             <color key="NSColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="60" name="ArialRoundedMTBold"/>
+                                            <font key="NSFont" size="50" name="ArialRoundedMTBold"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -227,34 +229,15 @@
                                 <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <size key="shadowOffset" width="4" height="3"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vVo-32-y7g">
-                                <rect key="frame" x="0.0" y="232" width="480" height="58"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.779296875" colorSpace="calibratedRGB"/>
-                                <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
-                                <color key="tintColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="BACK TO MAIN">
-                                            <attributes>
-                                                <font key="NSFont" size="40" name="ArialRoundedMTBold"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
-                                <connections>
-                                    <action selector="backTomain:" destination="6yw-RL-tvH" eventType="touchUpInside" id="o76-xn-Iom"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cgw-bH-a2s">
-                                <rect key="frame" x="0.0" y="164" width="480" height="58"/>
+                                <rect key="frame" x="0.0" y="482.5" width="320" height="59.5"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.779296875" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
                                         <fragment content="PLAY AGAIN">
                                             <attributes>
-                                                <font key="NSFont" size="40" name="ArialRoundedMTBold"/>
+                                                <font key="NSFont" size="41" name="ArialRoundedMTBold"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
                                         </fragment>
@@ -262,24 +245,18 @@
                                 </state>
                                 <connections>
                                     <action selector="playAgain:" destination="6yw-RL-tvH" eventType="touchUpInside" id="H7d-O9-2CR"/>
+                                    <segue destination="n2x-rq-cqu" kind="show" id="bei-pH-wQB"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="2VJ-7p-kpj" firstAttribute="top" secondItem="vVo-32-y7g" secondAttribute="bottom" constant="30" id="B4B-iD-nVb"/>
-                            <constraint firstItem="Vvh-nv-ndy" firstAttribute="height" secondItem="EN9-AK-l7L" secondAttribute="height" id="BzM-tU-c3W"/>
                             <constraint firstAttribute="trailing" secondItem="cgw-bH-a2s" secondAttribute="trailing" id="E8g-cy-kz3"/>
-                            <constraint firstItem="Vvh-nv-ndy" firstAttribute="centerX" secondItem="EN9-AK-l7L" secondAttribute="centerX" id="El5-NE-eMK"/>
                             <constraint firstItem="hrd-DM-AeT" firstAttribute="leading" secondItem="EN9-AK-l7L" secondAttribute="leading" id="HFX-ME-2Vw"/>
-                            <constraint firstItem="Vvh-nv-ndy" firstAttribute="width" secondItem="EN9-AK-l7L" secondAttribute="width" id="edZ-5T-wcx"/>
-                            <constraint firstItem="hrd-DM-AeT" firstAttribute="top" secondItem="rU1-kN-kyL" secondAttribute="bottom" constant="50" id="jv7-BO-3hZ"/>
-                            <constraint firstItem="Vvh-nv-ndy" firstAttribute="centerY" secondItem="EN9-AK-l7L" secondAttribute="centerY" id="k61-dq-78z"/>
-                            <constraint firstItem="vVo-32-y7g" firstAttribute="leading" secondItem="EN9-AK-l7L" secondAttribute="leading" id="pji-Lm-XbU"/>
+                            <constraint firstItem="hrd-DM-AeT" firstAttribute="top" secondItem="rU1-kN-kyL" secondAttribute="bottom" constant="30" id="jv7-BO-3hZ"/>
                             <constraint firstAttribute="trailing" secondItem="hrd-DM-AeT" secondAttribute="trailing" id="tZw-JY-k2t"/>
                             <constraint firstItem="cgw-bH-a2s" firstAttribute="leading" secondItem="EN9-AK-l7L" secondAttribute="leading" id="uS7-ru-Wom"/>
-                            <constraint firstItem="vVo-32-y7g" firstAttribute="top" secondItem="cgw-bH-a2s" secondAttribute="bottom" constant="10" id="uaR-2A-oY2"/>
-                            <constraint firstAttribute="trailing" secondItem="vVo-32-y7g" secondAttribute="trailing" id="whD-Xf-fb4"/>
+                            <constraint firstItem="2VJ-7p-kpj" firstAttribute="top" secondItem="cgw-bH-a2s" secondAttribute="bottom" constant="26" id="zto-0B-Ko4"/>
                         </constraints>
                     </view>
                     <connections>
@@ -299,16 +276,16 @@
                         <viewControllerLayoutGuide type="bottom" id="yh9-yy-AXq"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="2YM-pI-bkR">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="frogBackground" translatesAutoresizingMaskIntoConstraints="NO" id="TZU-Aq-DtW">
-                                <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="xMV-Tn-N1C">
-                                <rect key="frame" x="0.0" y="64" width="480" height="256"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="0.66291202910958902" colorSpace="calibratedWhite"/>
-                                <string key="text">Your goal is to whack a frog fast when he lights up. You whack only the frogs. To whack a frog, hit his head with your finger. Do it fast, before time runs out. If you whack the frog in time, you'll get 10 points. If you whack something else or you whack the frog after time runs out, you'll lose 2 points.</string>
+                                <string key="text">Your goal is to whack a frog fast when he lights up. You whack only the green frogs. To whack a frog, hit his head with your finger. Do it fast, before time runs out. If you whack the frog in time, you'll get 5 points. If you whack the black frog, you'll lose 10 points.</string>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="27"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -355,4 +332,7 @@
         <image name="frogIcon" width="600" height="588"/>
         <image name="hole" width="300" height="276"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="bei-pH-wQB"/>
+    </inferredMetricsTieBreakers>
 </document>

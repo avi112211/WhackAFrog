@@ -51,10 +51,10 @@ class Logic{
     func startTheGame(){
         
         //timer for frogs
-        frogTimer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(Logic.putFrog), userInfo: nil, repeats: true)
+        frogTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(Logic.putFrog), userInfo: nil, repeats: true)
         
         //timer for enemies
-        enemyTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(Logic.putEnemy), userInfo: nil, repeats: true)
+        enemyTimer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(Logic.putEnemy), userInfo: nil, repeats: true)
     }
 
     

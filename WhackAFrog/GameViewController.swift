@@ -12,11 +12,11 @@ class GameViewController: UIViewController, UICollectionViewDelegate , UICollect
     
     //components
     @IBOutlet weak var boardCollectionView: UICollectionView!
-    @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet weak var timerLabel: UILabel!	
     @IBOutlet weak var scoreLabel: UILabel!
     
     //coutdown timer
-    var timeCounter: Int = 60
+    var timeCounter: Int = 10
     var timer = Timer()
     
     //board
@@ -76,6 +76,11 @@ class GameViewController: UIViewController, UICollectionViewDelegate , UICollect
         self.isGameEnabled = false
         self.logic?.isGameEnabled = false
         
+        performSegue(withIdentifier: "endGame", sender: self)
+        
+        
+        
+        
 //        let thisConrollView = storyboard?.instantiateViewController(withIdentifier: "EndGameViewController") as! EndGameViewController
 //        thisConrollView.stringPassed = "LOSE"
 //        navigationController?.pushViewController(thisConrollView, animated: true)
@@ -86,7 +91,11 @@ class GameViewController: UIViewController, UICollectionViewDelegate , UICollect
         // Dispose of any resources that can be recreated.
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destVC = segue.destination as! EndGameViewController
+        
+        destVC.score = Int(scoreLabel.text!)!
+    }
     
     
     //  collection view init functions
@@ -122,8 +131,26 @@ class GameViewController: UIViewController, UICollectionViewDelegate , UICollect
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         logic?.click(row: indexPath.row, col: indexPath.section)
+        if(Int(scoreLabel.text!)! < 0){
+            endGame()
+            timer.invalidate() //stop coutdown timer
+        }
     }
     
-
+    //change the navigator back buttun to home screen
+    override func willMove(toParentViewController parent: UIViewController?) {
+        super.willMove(toParentViewController: parent)
+        if (parent == nil) {
+            if let navigationController = self.navigationController {
+                var viewControllers = navigationController.viewControllers
+                while (viewControllers.count > 2)
+                {
+                    viewControllers.remove(at: viewControllers.count - 2)
+                    
+                }
+                navigationController.setViewControllers(viewControllers, animated:false)
+            }
+        }
+    }
     
 }
