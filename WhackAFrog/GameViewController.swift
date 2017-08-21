@@ -16,7 +16,7 @@ class GameViewController: UIViewController, UICollectionViewDelegate , UICollect
     @IBOutlet weak var scoreLabel: UILabel!
     
     //coutdown timer
-    var timeCounter: Int = 10
+    var timeCounter: Int = 30
     var timer = Timer()
     
     //board
@@ -40,6 +40,7 @@ class GameViewController: UIViewController, UICollectionViewDelegate , UICollect
         
         //init logic board
         self.logic = Logic(numOfRows: numberOfRows, numOfCols: numberOfCols, scoreLabel : scoreLabel)
+        timerLabel.text = String(timeCounter)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -90,6 +91,7 @@ class GameViewController: UIViewController, UICollectionViewDelegate , UICollect
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destVC = segue.destination as! EndGameViewController
