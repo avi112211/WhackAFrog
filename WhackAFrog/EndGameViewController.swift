@@ -13,8 +13,13 @@ class EndGameViewController: UIViewController {
     @IBOutlet weak var winOrLoseMsg: UILabel!
     var score: Int = 0
     
+    deinit {
+        print("\(self) - dead")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("\(self) - alive")
         if(score <= 0){
             winOrLoseMsg.text = "YOU LOSE!\n:("
         }
@@ -29,13 +34,15 @@ class EndGameViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    @IBAction func backTomain(_ sender: UIButton) {
-        self.navigationController?.popToRootViewController(animated: true)
-    }
    
     @IBAction func playAgain(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
+        if let navigationController = self.navigationController {
+            var viewControllers = navigationController.viewControllers
+            viewControllers.remove(at: viewControllers.count - 2)
+            
+            navigationController.setViewControllers(viewControllers, animated:false)
+        }
+
     }
 
     //change the navigator back buttun to home screen

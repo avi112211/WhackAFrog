@@ -28,10 +28,14 @@ class GameViewController: UIViewController, UICollectionViewDelegate , UICollect
     var isGameEnabled: Bool = true
     var logic: Logic? = nil
     
+    deinit {
+        print("\(self) - dead")
+    }
+    
     override func viewDidLoad() {
         //boardCollectionView.allowsSelection = true
         super.viewDidLoad()
-        
+        print("\(self) - alive")
         //init collection view
         gridLayout = GridLayout(numberOfCols : numberOfCols,numberOfRows : numberOfRows)
         boardCollectionView.collectionViewLayout = gridLayout
@@ -76,10 +80,19 @@ class GameViewController: UIViewController, UICollectionViewDelegate , UICollect
     func endGame(){
         self.isGameEnabled = false
         self.logic?.isGameEnabled = false
+        timer.invalidate()
+        logic?.frogTimer.invalidate()
+        logic?.enemyTimer.invalidate()
+
         
         performSegue(withIdentifier: "endGame", sender: self)
         
-        
+        if let navigationController = self.navigationController {
+            var viewControllers = navigationController.viewControllers
+            viewControllers.remove(at: viewControllers.count - 2)
+            
+            navigationController.setViewControllers(viewControllers, animated:false)
+        }
         
         
 //        let thisConrollView = storyboard?.instantiateViewController(withIdentifier: "EndGameViewController") as! EndGameViewController
