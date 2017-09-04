@@ -16,8 +16,8 @@ class GameViewController: UIViewController, UICollectionViewDelegate , UICollect
     @IBOutlet weak var scoreLabel: UILabel!
     
     //coutdown timer
-    var timeCounter: Int = 30
-    var timer = Timer()
+    var timeCounter: Int = 0
+    var timer:Timer!
     
     //board
     let numberOfRows: Int = 5
@@ -25,30 +25,23 @@ class GameViewController: UIViewController, UICollectionViewDelegate , UICollect
     var gridLayout: GridLayout!
     
     //game controll
-    var isGameEnabled: Bool = true
-    var logic: Logic? = nil
+    var isGameEnabled: Bool!
+    var logic: Logic!
     
     deinit {
         print("\(self) - dead")
     }
     
-    override func viewDidLoad() {
-        //boardCollectionView.allowsSelection = true
-        super.viewDidLoad()
-        print("\(self) - alive")
-        //init collection view
-        gridLayout = GridLayout(numberOfCols : numberOfCols,numberOfRows : numberOfRows)
-        boardCollectionView.collectionViewLayout = gridLayout
-        boardCollectionView.reloadData()
-        
-        
-        //init logic board
-        self.logic = Logic(numOfRows: numberOfRows, numOfCols: numberOfCols, scoreLabel : scoreLabel)
-        timerLabel.text = String(timeCounter)
-    }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewDidLoad() {
+        resetBoard()
+        
+        print("\(self) - alive")
+            }
+    
+    override func viewWillAppear(_ animated: Bool) {
         //start timer
+        
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(GameViewController.counter), userInfo: nil, repeats: true)
         
         logic?.startTheGame()
@@ -59,6 +52,36 @@ class GameViewController: UIViewController, UICollectionViewDelegate , UICollect
         logic?.frogTimer.invalidate()
         logic?.enemyTimer.invalidate()
     }
+    
+    
+    func resetBoard(){
+        
+        timeCounter = 30
+        timer = Timer()
+        isGameEnabled = true
+        
+        //init frog pic from user detaults
+        let picName = UserDefaults.standard.string(forKey: InstructionsViewController.key)
+        if(picName != nil){
+            Tile.frogImage = UIImage(named: picName!)
+        }
+        else{
+            Tile.frogImage = UIImage(named: InstructionsViewController.picturs[0])
+        }
+        
+        //init collection view
+        gridLayout = GridLayout(numberOfCols : numberOfCols,numberOfRows : numberOfRows)
+        boardCollectionView.collectionViewLayout = gridLayout
+        boardCollectionView.reloadData()
+        
+        //init logic board
+        scoreLabel.text = String(0)
+        self.logic = Logic(numOfRows: numberOfRows, numOfCols: numberOfCols, scoreLabel : scoreLabel)
+        timerLabel.text = String(timeCounter)
+        
+        
+    }
+
     
     //applies every second
     func counter()

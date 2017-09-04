@@ -20,6 +20,7 @@
 		84592BED1F4092C100D053AA /* InstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84592BEC1F4092C100D053AA /* InstructionsViewController.swift */; };
 		84592BEF1F40BDEA00D053AA /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84592BEE1F40BDEA00D053AA /* Tile.swift */; };
 		84BA9A9D1F41E5A200FAD309 /* GridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BA9A9C1F41E5A200FAD309 /* GridLayout.swift */; };
+		8DC3F6F21F5D48BE00CA3041 /* WhackAFrog.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8DC3F6F01F5D48BE00CA3041 /* WhackAFrog.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		84592BEC1F4092C100D053AA /* InstructionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionsViewController.swift; sourceTree = "<group>"; };
 		84592BEE1F40BDEA00D053AA /* Tile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
 		84BA9A9C1F41E5A200FAD309 /* GridLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridLayout.swift; sourceTree = "<group>"; };
+		8DC3F6F11F5D48BE00CA3041 /* WhackAFrog.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WhackAFrog.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				84592BBC1F40518E00D053AA /* AppDelegate.swift */,
+				8DC3F6F01F5D48BE00CA3041 /* WhackAFrog.xcdatamodeld */,
 				84592BBE1F40518E00D053AA /* ViewController.swift */,
 				84592BC01F40518E00D053AA /* Main.storyboard */,
 				84521A431F4456CC0048ED89 /* Logic.swift */,
@@ -283,6 +286,7 @@
 				84BA9A9D1F41E5A200FAD309 /* GridLayout.swift in Sources */,
 				84521A441F4456CC0048ED89 /* Logic.swift in Sources */,
 				84592BED1F4092C100D053AA /* InstructionsViewController.swift in Sources */,
+				8DC3F6F21F5D48BE00CA3041 /* WhackAFrog.xcdatamodeld in Sources */,
 				84521A421F4443F40048ED89 /* EndGameViewController.swift in Sources */,
 				84592BBD1F40518E00D053AA /* AppDelegate.swift in Sources */,
 			);
@@ -436,7 +440,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = WhackAFrog/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = aaaaa.WhackAFrog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -448,7 +455,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = WhackAFrog/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = aaaaa.WhackAFrog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -550,6 +560,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8DC3F6F01F5D48BE00CA3041 /* WhackAFrog.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8DC3F6F11F5D48BE00CA3041 /* WhackAFrog.xcdatamodel */,
+			);
+			currentVersion = 8DC3F6F11F5D48BE00CA3041 /* WhackAFrog.xcdatamodel */;
+			path = WhackAFrog.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 84592BB11F40518E00D053AA /* Project object */;
 }
