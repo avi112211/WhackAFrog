@@ -56,18 +56,27 @@ class GameViewController: UIViewController, UICollectionViewDelegate , UICollect
     
     func resetBoard(){
         
-        timeCounter = 30
+        timeCounter = 15
         timer = Timer()
         isGameEnabled = true
         
         //init frog pic from user detaults
-        let picName = UserDefaults.standard.string(forKey: InstructionsViewController.key)
-        if(picName != nil){
-            Tile.frogImage = UIImage(named: picName!)
+        if let savedImage:UIImage = DataManger.loadImage(fromFile: "tempSavedImage") {
+            //pickedImageButton.setImage(savedImage, for: .normal)
+            Tile.frogImage = savedImage
         }
         else{
-            Tile.frogImage = UIImage(named: InstructionsViewController.picturs[0])
+            Tile.frogImage = UIImage(named: "frogIcon")!
         }
+
+
+//        let picName = UserDefaults.standard.string(forKey: ViewController.key)
+//        if(picName != nil){
+//            Tile.frogImage = UIImage(named: picName!)
+//        }
+//        else{
+//            Tile.frogImage = UIImage(named: "frogIcon")
+//        }
         
         //init collection view
         gridLayout = GridLayout(numberOfCols : numberOfCols,numberOfRows : numberOfRows)

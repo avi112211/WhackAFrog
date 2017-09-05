@@ -86,6 +86,11 @@ class Logic{
         //make a new frog
         board[x][y]?.setValue(val : 1)
         
+                
+
+        
+        
+        
     }
     
     @objc func putEnemy(){

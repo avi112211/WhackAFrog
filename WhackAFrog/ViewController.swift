@@ -7,13 +7,22 @@
 //
 
 import UIKit
+import Foundation
+import CoreData
+import CoreMotion
+import AVFoundation
+import MobileCoreServices
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
-      
+   
+    
+    static let key:String = "pickedPic"
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
     }
 
@@ -23,8 +32,56 @@ class ViewController: UIViewController {
     }
 
     
-
+    
+    @IBAction func chooseImage(_ sender: Any) {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        
+        let actionSheet = UIAlertController(title: "Photo Source", message: "choose a source", preferredStyle: .actionSheet)
+        
+        actionSheet.addAction(UIAlertAction(title: "Default", style: .default, handler: {(action:UIAlertAction) in
+            _ = DataManger.saveImage(UIImage(named: "frogIcon")!, toFile: "tempSavedImage")
+        }))
+        
+        actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: {(action:UIAlertAction) in
+            if UIImagePickerController.isSourceTypeAvailable(.camera){
+                imagePickerController.sourceType = .camera
+                self.present(imagePickerController, animated: true, completion: nil)
+            }
+            else{
+                // cant run in debug mode
+                print("Camera not available")
+            }
+        }))
+        
+        actionSheet.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: {(action:UIAlertAction) in
+            imagePickerController.sourceType = .photoLibrary
+            self.present(imagePickerController, animated: true, completion: nil)
+        }))
+        
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        self.present(actionSheet, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        let image = info[UIImagePickerControllerReferenceURL].debugDescription
+       
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            _ = DataManger.saveImage(image, toFile: "tempSavedImage")
+        }
+        UserDefaults.standard.set(image, forKey: ViewController.key)
+        
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
    
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+
+    
 
 }
 
