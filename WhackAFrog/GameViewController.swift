@@ -61,7 +61,7 @@ class GameViewController: UIViewController, UICollectionViewDelegate , UICollect
         isGameEnabled = true
         
         //init frog pic from user detaults
-        if let savedImage:UIImage = DataManger.loadImage(fromFile: "tempSavedImage") {
+        if let savedImage:UIImage = DataManager.loadImage(fromFile: DataManager.pictureFileName) {
             //pickedImageButton.setImage(savedImage, for: .normal)
             Tile.frogImage = savedImage
         }

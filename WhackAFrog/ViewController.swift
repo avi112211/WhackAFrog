@@ -15,15 +15,8 @@ import MobileCoreServices
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
-   
-    
-    static let key:String = "pickedPic"
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,7 +25,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
 
     
-    
     @IBAction func chooseImage(_ sender: Any) {
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
@@ -40,7 +32,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let actionSheet = UIAlertController(title: "Photo Source", message: "choose a source", preferredStyle: .actionSheet)
         
         actionSheet.addAction(UIAlertAction(title: "Default", style: .default, handler: {(action:UIAlertAction) in
-            _ = DataManger.saveImage(UIImage(named: "frogIcon")!, toFile: "tempSavedImage")
+            _ = DataManager.saveImage(UIImage(named: "frogIcon")!, toFile: DataManager.pictureFileName)
         }))
         
         actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: {(action:UIAlertAction) in
@@ -65,12 +57,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        let image = info[UIImagePickerControllerReferenceURL].debugDescription
-       
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            _ = DataManger.saveImage(image, toFile: "tempSavedImage")
+            _ = DataManager.saveImage(image, toFile: DataManager.pictureFileName)
         }
-        UserDefaults.standard.set(image, forKey: ViewController.key)
         
         picker.dismiss(animated: true, completion: nil)
     }
