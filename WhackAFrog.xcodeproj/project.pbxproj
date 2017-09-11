@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		822BDEAF1F66D1DE00FEE75F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 822BDEAE1F66D1DE00FEE75F /* CoreLocation.framework */; };
 		8238478A1F66FBCE00C6591A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 823847891F66FBCE00C6591A /* MapKit.framework */; };
+		8238478C1F6709B500C6591A /* GameRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8238478B1F6709B500C6591A /* GameRecordViewController.swift */; };
 		84521A441F4456CC0048ED89 /* Logic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84521A431F4456CC0048ED89 /* Logic.swift */; };
 		84592BBD1F40518E00D053AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84592BBC1F40518E00D053AA /* AppDelegate.swift */; };
 		84592BBF1F40518E00D053AA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84592BBE1F40518E00D053AA /* ViewController.swift */; };
@@ -46,6 +47,7 @@
 /* Begin PBXFileReference section */
 		822BDEAE1F66D1DE00FEE75F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		823847891F66FBCE00C6591A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		8238478B1F6709B500C6591A /* GameRecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameRecordViewController.swift; sourceTree = "<group>"; };
 		84521A431F4456CC0048ED89 /* Logic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logic.swift; sourceTree = "<group>"; };
 		84592BB91F40518E00D053AA /* WhackAFrog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhackAFrog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84592BBC1F40518E00D053AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 				8DC3F6F01F5D48BE00CA3041 /* WhackAFrog.xcdatamodeld */,
 				84592BBE1F40518E00D053AA /* ViewController.swift */,
 				84592BC01F40518E00D053AA /* Main.storyboard */,
+				8238478B1F6709B500C6591A /* GameRecordViewController.swift */,
 				8DFC677C1F5EB66800D94D24 /* EndGameViewController.swift */,
 				84521A431F4456CC0048ED89 /* Logic.swift */,
 				84592BEE1F40BDEA00D053AA /* Tile.swift */,
@@ -314,6 +317,7 @@
 				84592BED1F4092C100D053AA /* InstructionsViewController.swift in Sources */,
 				8DC3F6F21F5D48BE00CA3041 /* WhackAFrog.xcdatamodeld in Sources */,
 				84592BBD1F40518E00D053AA /* AppDelegate.swift in Sources */,
+				8238478C1F6709B500C6591A /* GameRecordViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,16 +10,16 @@ import Foundation
 import UIKit
 import CoreData
 
+//class GameRecord : NSManagedObject{
+//    @NSManaged var name:String!
+//    @NSManaged var score:String!
+//    @NSManaged var lng:String!
+//    @NSManaged var lat:String!
+//
+//
+//
+//}
 
-class GameRecord : NSManagedObject{
-    @NSManaged var name:String!
-    @NSManaged var score:String!
-    @NSManaged var lng:String!
-    @NSManaged var lat:String!
-    
-    
-    
-}
 
 class DataManager {
     

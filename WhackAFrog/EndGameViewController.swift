@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class EndGameViewController: UIViewController {
 
@@ -27,7 +28,7 @@ class EndGameViewController: UIViewController {
         }
             
         else{
-            winOrLoseMsg.text?.append("\n Your Score:\(score)")
+            winOrLoseMsg.text?.append("\n Your Score:\(score)")            
             
             //TODO: check in data manager if its a new record
             //if new record -> showRecordDialod()

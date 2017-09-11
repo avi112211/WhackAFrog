@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1611" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1t9-cI-0Le">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1t9-cI-0Le">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -380,10 +380,10 @@
             </objects>
             <point key="canvasLocation" x="909" y="1101"/>
         </scene>
-        <!--View Controller-->
+        <!--Game Record View Controller-->
         <scene sceneID="XRH-ce-Kvd">
             <objects>
-                <viewController id="99D-jE-KPf" sceneMemberID="viewController">
+                <viewController id="99D-jE-KPf" customClass="GameRecordViewController" customModule="WhackAFrog" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tdf-Pl-wHj"/>
                         <viewControllerLayoutGuide type="bottom" id="GZL-9s-Xhz"/>
@@ -422,6 +422,10 @@
                                 <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <size key="shadowOffset" width="-2" height="-2"/>
                             </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="KHe-tK-oMB">
+                                <rect key="frame" x="16" y="157" width="288" height="399"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -440,10 +444,13 @@
                             <constraint firstItem="L1M-qM-mtv" firstAttribute="leading" secondItem="yxR-fL-aCA" secondAttribute="trailing" constant="10" id="zKU-dL-mWa"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="recordMap" destination="KHe-tK-oMB" id="gfD-bH-ksQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Qw-Tl-v3f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1928" y="1101"/>
+            <point key="canvasLocation" x="1927.5" y="1100.7042253521126"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="v3b-rA-23D">
