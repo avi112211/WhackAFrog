@@ -26,6 +26,8 @@
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Your high score will be presented on a map, we need to get your location</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

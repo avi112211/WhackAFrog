@@ -11,7 +11,7 @@ import UIKit
 import CoreData
 
 
-class Record : NSManagedObject{
+class GameRecord : NSManagedObject{
     @NSManaged var name:String!
     @NSManaged var score:String!
     @NSManaged var lng:String!
@@ -64,7 +64,7 @@ class DataManager {
     
     static var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    static var recordArray:[Record] = []
+    static var recordArray:[GameRecord] = []
     
     static func saveRecord(name: String, score: Int, lng: Double, lat: Double){
         let record = NSEntityDescription.insertNewObject(forEntityName: entityName, into: context)
@@ -82,14 +82,14 @@ class DataManager {
         }
     }
     
-    static func loadRecords()->[Record]{
+    static func loadRecords()->[GameRecord]{
         fetchData()
         return recordArray
     }
     
     static func fetchData(){
         do{
-            recordArray = try context.fetch(Record.fetchRequest()) as? [NSManagedObject] as! [Record]
+            recordArray = try context.fetch(GameRecord.fetchRequest()) as? [NSManagedObject] as! [GameRecord]
         }
         catch{
             print("DataManager - FetchData: \(error)")

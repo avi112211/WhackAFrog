@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		822BDEAF1F66D1DE00FEE75F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 822BDEAE1F66D1DE00FEE75F /* CoreLocation.framework */; };
+		8238478A1F66FBCE00C6591A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 823847891F66FBCE00C6591A /* MapKit.framework */; };
 		84521A441F4456CC0048ED89 /* Logic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84521A431F4456CC0048ED89 /* Logic.swift */; };
 		84592BBD1F40518E00D053AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84592BBC1F40518E00D053AA /* AppDelegate.swift */; };
 		84592BBF1F40518E00D053AA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84592BBE1F40518E00D053AA /* ViewController.swift */; };
@@ -42,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		822BDEAE1F66D1DE00FEE75F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		823847891F66FBCE00C6591A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		84521A431F4456CC0048ED89 /* Logic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logic.swift; sourceTree = "<group>"; };
 		84592BB91F40518E00D053AA /* WhackAFrog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhackAFrog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84592BBC1F40518E00D053AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +74,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8238478A1F66FBCE00C6591A /* MapKit.framework in Frameworks */,
+				822BDEAF1F66D1DE00FEE75F /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +96,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		822BDEAD1F66D1DD00FEE75F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				823847891F66FBCE00C6591A /* MapKit.framework */,
+				822BDEAE1F66D1DE00FEE75F /* CoreLocation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		84592BB01F40518E00D053AA = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +113,7 @@
 				84592BD01F40518E00D053AA /* WhackAFrogTests */,
 				84592BDB1F40518E00D053AA /* WhackAFrogUITests */,
 				84592BBA1F40518E00D053AA /* Products */,
+				822BDEAD1F66D1DD00FEE75F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -218,6 +234,11 @@
 					84592BB81F40518E00D053AA = {
 						CreatedOnToolsVersion = 8.3.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					84592BCC1F40518E00D053AA = {
 						CreatedOnToolsVersion = 8.3.2;

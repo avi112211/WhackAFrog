@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import CoreLocation
 
-class GameViewController: UIViewController, UICollectionViewDelegate , UICollectionViewDataSource{
+class GameViewController: UIViewController, UICollectionViewDelegate , UICollectionViewDataSource, CLLocationManagerDelegate{
     
     //components
     @IBOutlet weak var boardCollectionView: UICollectionView!
@@ -24,6 +25,10 @@ class GameViewController: UIViewController, UICollectionViewDelegate , UICollect
     let numberOfCols: Int = 4
     var gridLayout: GridLayout!
     
+    //GPS location
+    var latitude:Double = 0
+    var longitude:Double = 0
+    
     //game controll
     var isGameEnabled: Bool!
     var logic: Logic!
@@ -32,9 +37,17 @@ class GameViewController: UIViewController, UICollectionViewDelegate , UICollect
         print("\(self) - dead")
     }
     
+    let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         resetBoard()
+        locationManager.requestWhenInUseAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled(){
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.startUpdatingLocation()
+        }
         
         print("\(self) - alive")
             }
@@ -181,6 +194,13 @@ class GameViewController: UIViewController, UICollectionViewDelegate , UICollect
         if(Int(scoreLabel.text!)! < 0){
             endGame()
             timer.invalidate() //stop coutdown timer
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.first{
+            latitude = location.coordinate.latitude
+            longitude = location.coordinate.longitude
         }
     }
     
