@@ -10,22 +10,9 @@ import Foundation
 import UIKit
 import CoreData
 
-//class GameRecord : NSManagedObject{
-//    @NSManaged var name:String!
-//    @NSManaged var score:String!
-//    @NSManaged var lng:String!
-//    @NSManaged var lat:String!
-//
-//
-//
-//}
-
 
 class DataManager {
-    
-    
     //manage default frog picture
-    
     static let pictureFileName:String = "tempSavedImage"
     
     static var applicationLibraryPath: NSString = {
@@ -55,75 +42,105 @@ class DataManager {
     }
     //
     
+   
+    
     //manage records
-    static let entityName:String = "Record"
+    static let recordsKey:String = "Record"
+    static let maxRecords:Int = 10
+    
+    static func saveRecord(name: String, score: Int, lng: Double, lat: Double)->Bool{
+        let newRecord = MyRecord(name: name, score: score, lng: lng, lat: lat)
+        var allRecords = loadRecords()
+        
+        //chack no more then 10 recors
+        if(allRecords.count == maxRecords){
+            //if more - delete one
+            let index = deleteMinRecord(allRecords: allRecords)
+            if(index > -1){
+                allRecords[index] = newRecord
+            }
+            //cant be something else
+        }
+        else{
+            allRecords.append(newRecord)
+        }
+        
+        UserDefaults.standard.set(allRecords.map{$0.dictionary}, forKey: recordsKey)
+        return UserDefaults.standard.synchronize()
+    }
+    
+    static func loadRecords()->[MyRecord]{
+        if let allRecods = UserDefaults.standard.array(forKey: recordsKey) as? [Dictionary<String,Any>]{
+            return allRecods.map{MyRecord(dictionary: $0)}
+        }
+        return []
+    }
+
+    static func checkMinRecord()->Int{
+        let allRecords:[MyRecord] = loadRecords()
+        if(allRecords.count < maxRecords){
+            return -1;
+        }
+        var minScore:Int = allRecords[0].score
+        for record in allRecords{
+            if(record.score < minScore){
+                minScore = record.score
+            }
+        }
+        return minScore
+    }
+    
+    static func deleteMinRecord(allRecords: [MyRecord])->Int{
+        let minScore:Int = checkMinRecord()
+        let allRecords:[MyRecord] = loadRecords()
+        var index = 0
+        
+        for record in allRecords{
+            if(record.score == minScore){
+                return index
+            }
+            index+=1
+        }
+        
+        return -1
+    }
+}
+
+
+class MyRecord : NSObject{
     static let kName:String = "name"
     static let kScore:String = "score"
     static let kLng:String = "lng"
     static let kLat:String = "lat"
     
-    static var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var name:String
+    var score:Int
+    var lng:Double
+    var lat:Double
     
-    static var recordArray:[GameRecord] = []
+    var dictionary:[String:Any]{
+        return self.dictionaryWithValues(forKeys: [MyRecord.kName, MyRecord.kScore, MyRecord.kLng, MyRecord.kLat])
+    }
     
-    static func saveRecord(name: String, score: Int, lng: Double, lat: Double){
-        let record = NSEntityDescription.insertNewObject(forEntityName: entityName, into: context)
+    init(name:String , score:Int, lng:Double , lat:Double) {
+        self.name = name
+        self.score = score
+        self.lng = lng
+        self.lat = lat
+        super.init()
         
-        record.setValue(name, forKey: kName)
-        record.setValue(score, forKey: kScore)
-        record.setValue(lng, forKey: kLng)
-        record.setValue(lat, forKey: kLat)
-
-        do{
-            try context.save()
-        }
-        catch{
-            print("DataManager - Save error: \(error)")
-        }
     }
     
-    static func loadRecords()->[GameRecord]{
-        fetchData()
-        return recordArray
+    init(dictionary:[String:Any]){
+        self.name = ""
+        self.score = 0
+        self.lng = 0
+        self.lat = 0
+        super.init()
+        self.setValuesForKeys(dictionary)
     }
     
-    static func fetchData(){
-        do{
-            recordArray = try context.fetch(GameRecord.fetchRequest()) as? [NSManagedObject] as! [GameRecord]
-        }
-        catch{
-            print("DataManager - FetchData: \(error)")
-        }
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
 }

@@ -30,13 +30,15 @@ class EndGameViewController: UIViewController {
         else{
             winOrLoseMsg.text?.append("\n Your Score:\(score)")            
             
-            //TODO: check in data manager if its a new record
-            //if new record -> showRecordDialod()
+            //check in data manager if its a new record
+            if(score > DataManager.checkMinRecord()){
+                showRecordDialog()
+            }
         }
     }
     
     
-    func showRecordDialod(){
+    func showRecordDialog(){
         
         //show popup / sheet - enter name
         let alertController = UIAlertController(title: "NEW RECORD!!", message: "Enter your name", preferredStyle: .alert)
@@ -60,12 +62,21 @@ class EndGameViewController: UIViewController {
         nameTextField = textField
     }
     
+  
+    
     func okHandler(alert: UIAlertAction){
-        //nameTextField == the name of the player
-        //TODO: get location
         
-        //TODO: save the record to dataManager
-
+        if(nameTextField?.text == ""){
+            showRecordDialog()
+            return
+        }
+              
+        //TODO: get location
+        let lng:Double = 0
+        let lat:Double = 0
+        
+        //save the record to dataManager
+        _ = DataManager.saveRecord(name: (nameTextField?.text)!, score: score, lng: lng, lat: lat)//return Bool
     }
     
     override func didReceiveMemoryWarning() {

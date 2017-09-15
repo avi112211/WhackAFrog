@@ -65,7 +65,7 @@
 		84592BEA1F4090A100D053AA /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		84592BEC1F4092C100D053AA /* InstructionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionsViewController.swift; sourceTree = "<group>"; };
 		84592BEE1F40BDEA00D053AA /* Tile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
-		84BA9A9C1F41E5A200FAD309 /* GridLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridLayout.swift; sourceTree = "<group>"; };
+		84BA9A9C1F41E5A200FAD309 /* GridLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GridLayout.swift; path = ../GridLayout.swift; sourceTree = "<group>"; };
 		8DC3F6F11F5D48BE00CA3041 /* WhackAFrog.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WhackAFrog.xcdatamodel; sourceTree = "<group>"; };
 		8DFC676F1F5E9FF000D94D24 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		8DFC677C1F5EB66800D94D24 /* EndGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndGameViewController.swift; sourceTree = "<group>"; };
@@ -110,7 +110,6 @@
 		84592BB01F40518E00D053AA = {
 			isa = PBXGroup;
 			children = (
-				84BA9A9C1F41E5A200FAD309 /* GridLayout.swift */,
 				84592BBB1F40518E00D053AA /* WhackAFrog */,
 				84592BD01F40518E00D053AA /* WhackAFrogTests */,
 				84592BDB1F40518E00D053AA /* WhackAFrogUITests */,
@@ -132,6 +131,7 @@
 		84592BBB1F40518E00D053AA /* WhackAFrog */ = {
 			isa = PBXGroup;
 			children = (
+				84BA9A9C1F41E5A200FAD309 /* GridLayout.swift */,
 				84592BBC1F40518E00D053AA /* AppDelegate.swift */,
 				8DC3F6F01F5D48BE00CA3041 /* WhackAFrog.xcdatamodeld */,
 				84592BBE1F40518E00D053AA /* ViewController.swift */,

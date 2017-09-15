@@ -82,14 +82,6 @@ class GameViewController: UIViewController, UICollectionViewDelegate , UICollect
             Tile.frogImage = UIImage(named: "frogIcon")!
         }
 
-
-//        let picName = UserDefaults.standard.string(forKey: ViewController.key)
-//        if(picName != nil){
-//            Tile.frogImage = UIImage(named: picName!)
-//        }
-//        else{
-//            Tile.frogImage = UIImage(named: "frogIcon")
-//        }
         
         //init collection view
         gridLayout = GridLayout(numberOfCols : numberOfCols,numberOfRows : numberOfRows)
