@@ -26,8 +26,8 @@ class GameViewController: UIViewController, UICollectionViewDelegate , UICollect
     var gridLayout: GridLayout!
     
     //GPS location
-    var latitude:Double = 0
-    var longitude:Double = 0
+    var latitude:Double = -1000
+    var longitude:Double = -1000
     
     //game controll
     var isGameEnabled: Bool!
@@ -41,7 +41,6 @@ class GameViewController: UIViewController, UICollectionViewDelegate , UICollect
     
     override func viewDidLoad() {
         resetBoard()
-        locationManager.requestWhenInUseAuthorization()
         
         if CLLocationManager.locationServicesEnabled(){
             locationManager.delegate = self
@@ -131,11 +130,6 @@ class GameViewController: UIViewController, UICollectionViewDelegate , UICollect
             
             navigationController.setViewControllers(viewControllers, animated:false)
         }
-        
-        
-//        let thisConrollView = storyboard?.instantiateViewController(withIdentifier: "EndGameViewController") as! EndGameViewController
-//        thisConrollView.stringPassed = "LOSE"
-//        navigationController?.pushViewController(thisConrollView, animated: true)
     }
     
     override func didReceiveMemoryWarning() {
@@ -198,6 +192,7 @@ class GameViewController: UIViewController, UICollectionViewDelegate , UICollect
             longitude = location.coordinate.longitude
         }
     }
+    
     
     //change the navigator back buttun to home screen
     override func willMove(toParentViewController parent: UIViewController?) {

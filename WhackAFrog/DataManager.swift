@@ -104,8 +104,35 @@ class DataManager {
         
         return -1
     }
+    
+    //mannage gps popup alert
+    static let gpsKey:String = "GpsPopUp"
+    static let maxCount:Int = 3
+    
+    static func setGpsCount(count: Int)->Bool{
+        let count = (count + 1) % maxCount
+        UserDefaults.standard.set(count, forKey: gpsKey)
+        return UserDefaults.standard.synchronize()
+    }
+    
+    static func getGpsCount()->Int{
+        if let gpsCount = UserDefaults.standard.object(forKey: gpsKey) as? Int{
+            return gpsCount
+        }
+        return 0
+    }
+    
+    static func showPopUp()->Bool{
+        let count = getGpsCount()
+        if(count == (maxCount - 1)){
+            if(setGpsCount(count: count)){
+                return true
+            }
+        }
+        _=setGpsCount(count: count)
+        return false
+    }
 }
-
 
 class MyRecord : NSObject{
     static let kName:String = "name"

@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -428,10 +429,56 @@
                             <mapView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="KHe-tK-oMB">
                                 <rect key="frame" x="0.0" y="203" width="320" height="365"/>
                             </mapView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="t3a-PG-evk">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="48" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="t3a-PG-evk">
                                 <rect key="frame" x="0.0" y="201" width="320" height="367"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="record" rowHeight="48" id="XLl-40-5ux" customClass="GameRecordTableViewCell" customModule="WhackAFrog" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="48"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XLl-40-5ux" id="gI8-Sw-qTb">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="48"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kuA-qb-lfW">
+                                                    <rect key="frame" x="8" y="8" width="110" height="32"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="kuA-qb-lfW" secondAttribute="height" multiplier="151:44" id="umE-Fz-FBK"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c29-kd-01n">
+                                                    <rect key="frame" x="206.5" y="8" width="105.5" height="32"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="c29-kd-01n" secondAttribute="height" multiplier="145:44" id="CRX-7T-a1F"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="kuA-qb-lfW" firstAttribute="leading" secondItem="gI8-Sw-qTb" secondAttribute="leading" constant="8" id="6bq-yq-ZB2"/>
+                                                <constraint firstAttribute="bottom" secondItem="c29-kd-01n" secondAttribute="bottom" constant="7.5" id="fRS-Do-cSz"/>
+                                                <constraint firstAttribute="trailing" secondItem="c29-kd-01n" secondAttribute="trailing" constant="8" id="hyo-mp-wq0"/>
+                                                <constraint firstItem="c29-kd-01n" firstAttribute="top" secondItem="gI8-Sw-qTb" secondAttribute="top" constant="8" id="jNY-iu-w6H"/>
+                                                <constraint firstAttribute="bottom" secondItem="kuA-qb-lfW" secondAttribute="bottom" constant="7.5" id="jch-AH-LKF"/>
+                                                <constraint firstItem="kuA-qb-lfW" firstAttribute="top" secondItem="gI8-Sw-qTb" secondAttribute="top" constant="8" id="wgO-0S-2s6"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="playerName" destination="kuA-qb-lfW" id="0oy-ES-a9J"/>
+                                            <outlet property="playerScore" destination="c29-kd-01n" id="mRu-8e-vza"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="99D-jE-KPf" id="3t5-ek-05q"/>
+                                    <outlet property="delegate" destination="99D-jE-KPf" id="oqU-H5-BOR"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

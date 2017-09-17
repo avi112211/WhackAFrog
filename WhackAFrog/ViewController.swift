@@ -10,13 +10,20 @@ import UIKit
 import Foundation
 import CoreData
 import CoreMotion
+import CoreLocation
 import AVFoundation
 import MobileCoreServices
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    let locationManager = CLLocationManager()
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        locationManager.requestWhenInUseAuthorization()
+        
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

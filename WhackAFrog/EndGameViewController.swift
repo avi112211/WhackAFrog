@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class EndGameViewController: UIViewController {
+class EndGameViewController: UIViewController, CLLocationManagerDelegate {
 
    
     @IBOutlet weak var winOrLoseMsg: UILabel!
@@ -17,8 +17,10 @@ class EndGameViewController: UIViewController {
     var score: Int = 0
     
     //GPS location
-    var latitude:Double = 0
-    var longitude:Double = 0
+    var latitude:Double = -1000
+    var longitude:Double = -1000
+    
+    let locationManager = CLLocationManager()
     
     deinit {
         print("\(self) - dead")
@@ -36,7 +38,21 @@ class EndGameViewController: UIViewController {
             
             //check in data manager if its a new record
             if(score > DataManager.checkMinRecord()){
-                showRecordDialog()
+                if CLLocationManager.locationServicesEnabled() {
+                    if(CLLocationManager.authorizationStatus() == CLAuthorizationStatus.denied && DataManager.showPopUp()) {
+                        showLocationDisabledPopUp()
+                        if CLLocationManager.locationServicesEnabled(){
+                            locationManager.delegate = self
+                            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+                            locationManager.startUpdatingLocation()
+                        }
+                        
+                    }
+                }
+                else{
+                    showRecordDialog()
+                }
+                
             }
         }
     }
@@ -62,6 +78,28 @@ class EndGameViewController: UIViewController {
         
     }
     
+    func showLocationDisabledPopUp(){
+        let alertController = UIAlertController(title: "Location Access Disabled", message: "In order to show your location we need your permission", preferredStyle: .alert)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { action in
+            //run your function here
+            self.showRecordDialog()
+        })
+
+        alertController.addAction(cancelAction)
+        
+        let openAction = UIAlertAction(title: "Open Settings", style: .default){(action) in
+            if let url = URL(string: UIApplicationOpenSettingsURLString){
+                UIApplication.shared.open(url, options: [:], completionHandler: { action in
+                    //run your function here
+                    self.showRecordDialog()
+                })
+            }
+        }
+        alertController.addAction(openAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
     func nameTextField(textField: UITextField!){
         nameTextField = textField
     }
@@ -84,6 +122,12 @@ class EndGameViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.first{
+            latitude = location.coordinate.latitude
+            longitude = location.coordinate.longitude
+        }
+    }
     
     @IBAction func playAgain(_ sender: UIButton) {
         if let navigationController = self.navigationController {
