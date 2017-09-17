@@ -48,6 +48,9 @@ class EndGameViewController: UIViewController, CLLocationManagerDelegate {
                         }
                         
                     }
+                    else{
+                        showRecordDialog()
+                    }
                 }
                 else{
                     showRecordDialog()
