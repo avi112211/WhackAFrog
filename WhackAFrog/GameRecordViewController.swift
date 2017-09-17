@@ -12,6 +12,15 @@ import MapKit
 class GameRecordViewController: UIViewController {
 
     @IBOutlet weak var recordMap: MKMapView!
+    @IBOutlet weak var recordTable: UITableView!
+    @IBAction func `switch`(_ sender: UISwitch) {
+        if( sender.isOn == true){
+            mapViewDisplay()
+        }
+        else{
+            tableViewDisplay()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +46,14 @@ class GameRecordViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func mapViewDisplay(){
+        recordMap.isHidden = false
+        recordTable.isHidden = true
 
-  
-
+    }
+    
+    func tableViewDisplay(){
+        recordMap.isHidden = true
+        recordTable.isHidden = false
+    }
 }

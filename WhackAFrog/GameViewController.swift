@@ -64,6 +64,7 @@ class GameViewController: UIViewController, UICollectionViewDelegate , UICollect
         timer.invalidate()
         logic?.frogTimer.invalidate()
         logic?.enemyTimer.invalidate()
+        locationManager.stopUpdatingLocation()
     }
     
     
@@ -120,7 +121,7 @@ class GameViewController: UIViewController, UICollectionViewDelegate , UICollect
         timer.invalidate()
         logic?.frogTimer.invalidate()
         logic?.enemyTimer.invalidate()
-
+        locationManager.stopUpdatingLocation()
         
         performSegue(withIdentifier: "endGame", sender: self)
         
@@ -147,6 +148,8 @@ class GameViewController: UIViewController, UICollectionViewDelegate , UICollect
         let destVC = segue.destination as! EndGameViewController
         
         destVC.score = Int(scoreLabel.text!)!
+        destVC.longitude = longitude
+        destVC.latitude = latitude
     }
     
     

@@ -16,6 +16,10 @@ class EndGameViewController: UIViewController {
     var nameTextField: UITextField?
     var score: Int = 0
     
+    //GPS location
+    var latitude:Double = 0
+    var longitude:Double = 0
+    
     deinit {
         print("\(self) - dead")
     }
@@ -70,13 +74,9 @@ class EndGameViewController: UIViewController {
             showRecordDialog()
             return
         }
-              
-        //TODO: get location
-        let lng:Double = 0
-        let lat:Double = 0
         
         //save the record to dataManager
-        _ = DataManager.saveRecord(name: (nameTextField?.text)!, score: score, lng: lng, lat: lat)//return Bool
+        _ = DataManager.saveRecord(name: (nameTextField?.text)!, score: score, lng: longitude, lat: latitude)//return Bool
     }
     
     override func didReceiveMemoryWarning() {
