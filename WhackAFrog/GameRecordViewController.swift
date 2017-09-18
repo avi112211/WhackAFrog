@@ -12,7 +12,7 @@ import CoreLocation
 
 class GameRecordViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, CLLocationManagerDelegate {
     
-    let records = DataManager.loadRecords()
+    var records:[MyRecord] = DataManager.loadRecords()
     let manager = CLLocationManager()
     var switchOn: Bool = false;
     
@@ -31,7 +31,7 @@ class GameRecordViewController: UIViewController, UITableViewDataSource, UITable
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        records = records.sorted(by: { $0.score > $1.score })
         manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyBest
         manager.requestWhenInUseAuthorization()

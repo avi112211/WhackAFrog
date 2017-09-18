@@ -442,18 +442,18 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kuA-qb-lfW">
-                                                    <rect key="frame" x="8" y="8" width="110" height="32"/>
+                                                    <rect key="frame" x="8" y="8" width="225" height="29"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" secondItem="kuA-qb-lfW" secondAttribute="height" multiplier="151:44" id="umE-Fz-FBK"/>
+                                                        <constraint firstAttribute="width" secondItem="kuA-qb-lfW" secondAttribute="height" multiplier="225:29" id="nD1-58-IHd"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c29-kd-01n">
-                                                    <rect key="frame" x="206.5" y="8" width="105.5" height="32"/>
+                                                    <rect key="frame" x="241" y="8" width="58.5" height="29"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" secondItem="c29-kd-01n" secondAttribute="height" multiplier="145:44" id="CRX-7T-a1F"/>
+                                                        <constraint firstAttribute="width" secondItem="c29-kd-01n" secondAttribute="height" multiplier="2:1" id="KVk-kH-CnN"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                     <nil key="textColor"/>
@@ -461,12 +461,14 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="kuA-qb-lfW" firstAttribute="leading" secondItem="gI8-Sw-qTb" secondAttribute="leading" constant="8" id="6bq-yq-ZB2"/>
-                                                <constraint firstAttribute="bottom" secondItem="c29-kd-01n" secondAttribute="bottom" constant="7.5" id="fRS-Do-cSz"/>
-                                                <constraint firstAttribute="trailing" secondItem="c29-kd-01n" secondAttribute="trailing" constant="8" id="hyo-mp-wq0"/>
-                                                <constraint firstItem="c29-kd-01n" firstAttribute="top" secondItem="gI8-Sw-qTb" secondAttribute="top" constant="8" id="jNY-iu-w6H"/>
-                                                <constraint firstAttribute="bottom" secondItem="kuA-qb-lfW" secondAttribute="bottom" constant="7.5" id="jch-AH-LKF"/>
-                                                <constraint firstItem="kuA-qb-lfW" firstAttribute="top" secondItem="gI8-Sw-qTb" secondAttribute="top" constant="8" id="wgO-0S-2s6"/>
+                                                <constraint firstItem="c29-kd-01n" firstAttribute="leading" secondItem="kuA-qb-lfW" secondAttribute="trailing" constant="8" id="5zd-NU-WeB"/>
+                                                <constraint firstItem="c29-kd-01n" firstAttribute="leading" secondItem="kuA-qb-lfW" secondAttribute="trailing" constant="8" id="78L-uc-x7c"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="c29-kd-01n" secondAttribute="bottom" constant="3" id="7tt-a2-wZT"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="c29-kd-01n" secondAttribute="trailing" constant="12.5" id="9d6-Ia-Zp0"/>
+                                                <constraint firstItem="c29-kd-01n" firstAttribute="top" secondItem="gI8-Sw-qTb" secondAttribute="topMargin" id="HHf-SJ-VbY"/>
+                                                <constraint firstItem="kuA-qb-lfW" firstAttribute="top" secondItem="gI8-Sw-qTb" secondAttribute="topMargin" id="OJl-F6-4Di"/>
+                                                <constraint firstItem="kuA-qb-lfW" firstAttribute="leading" secondItem="gI8-Sw-qTb" secondAttribute="leadingMargin" id="aH8-qT-igA"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="kuA-qb-lfW" secondAttribute="bottom" constant="3" id="hbI-sO-oNA"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
