@@ -21,9 +21,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         super.viewDidLoad()
         
         locationManager.requestWhenInUseAuthorization()
-        
-        
-        
     }
 
     override func didReceiveMemoryWarning() {

@@ -81,8 +81,9 @@ class EndGameViewController: UIViewController, CLLocationManagerDelegate {
         
     }
     
+    //popup that asks for user locaation permission
     func showLocationDisabledPopUp(){
-        let alertController = UIAlertController(title: "Location Access Disabled", message: "In order to show your location we need your permission", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Location Access Disabled", message: "In order to save your location we need your permission", preferredStyle: .alert)
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { action in
             //run your function here

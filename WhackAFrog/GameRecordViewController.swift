@@ -94,13 +94,10 @@ class GameRecordViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     func addAnnotationsToMap(){
-        var count = 0
-                
-        
         for record in records{
             
-            if(record.lng != -1000 && record.lat != 1000){
-                count = count + 1
+            if(record.lng != -1000 && record.lat != -1000){
+
                 let location:CLLocationCoordinate2D = CLLocationCoordinate2DMake(record.lat, record.lng)
                 
                 let span:MKCoordinateSpan = MKCoordinateSpanMake(0.1, 0.1)
@@ -119,7 +116,7 @@ class GameRecordViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     func addMapTrackingButton(){
-        let image = UIImage(named: "trackme") as UIImage?
+        let image = UIImage(named: "myLocation") as UIImage?
         let button   = UIButton(type: UIButtonType.system) as UIButton
         button.frame = CGRect(x: 5, y: 5, width: 35, height: 35)
         button.setImage(image, for: .normal)
